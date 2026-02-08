@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026년 알바 주휴수당 계산기 | 예상 월급 확인</title>
+  <link rel="stylesheet" href="index_css.css" />
+  <script src="index_js.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>2026년 알바 주휴수당 계산기</h1>
+    <p class="data-standard">본 계산기는 2026년 고용노동부 고시 기준을 바탕으로 제작되었습니다.</p>
+
+    <div class="input-group">
+      <label>시급</label>
+      <div class="input-wrap">
+        <input type="number" id="hourlyWage" min="0" inputmode="numeric" placeholder="2026년 최저시급 10,300원(가정)" />
+        <span class="unit">원</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>일일 근무 시간</label>
+      <div class="input-wrap">
+        <input type="number" id="dailyHours" min="0" step="0.5" inputmode="decimal" />
+        <span class="unit">시간</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>주 근무 일수</label>
+      <div class="input-wrap">
+        <input type="number" id="weeklyDays" min="0" max="7" inputmode="numeric" />
+        <span class="unit">일</span>
+      </div>
+    </div>
+
+    <button id="calcBtn" onclick="calculate()" disabled>계산하기</button>
+    <button onclick="resetInputs()" class="reset-btn">🔄 다시 계산하기</button>
+    <button onclick="toggleDarkMode()" class="sub-btn">🌙 다크모드 전환</button>
+
+    <div class="result" id="resultBox">
+      입력하면 자동으로 계산 미리보기가 표시됩니다.
+    </div>
+
+    <button class="share-btn" id="shareBtn" onclick="shareResult()" disabled>
+      📈 계산 결과 복사하기
+    </button>
+
+    <div class="recommend-links">
+      <p>🔗 알바생 필수 정보 (2026 업데이트)</p>
+      <a href="https://www.minimumwage.go.kr/" target="_blank" rel="noopener noreferrer">최저임금위원회</a> | 
+      <a href="https://labor.moel.go.kr/minwonApply/minwonFormat.do?searchVal=SN001" target="_blank" rel="noopener noreferrer">고용노동부 노동포털</a>
+    </div>
+
+    <div class="info-section">
+      <h3>📜 꼭 알아야 할 알바 상식</h3>
+      
+      <div class="faq-section">
+        <details>
+          <summary>📍 근로계약서 미작성 대처법</summary>
+          <p>근로계약서는 출근 첫날 작성해야 합니다. 미작성 시 사업주에게 500만 원 이하의 과태료가 부과될 수 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>📍 2026 최저임금 및 공제 기준</summary>
+          <p>2026년 최저시급 결정액을 확인하세요. 월급 계산 시 4대 보험(고용, 국민연금 등) 공제율 약 9.32%가 적용됩니다.</p>
+        </details>
+
+        <details>
+          <summary>📍 알바 권리 구제 (임금체불)</summary>
+          <p>임금체불 시 고용노동부 홈페이지에서 인터넷 진정이 가능합니다. 법률구조공단을 통한 무료 상담도 활용해 보세요.</p>
+        </details>
+
+        <details>
+          <summary>📍 퇴직금 및 실업급여 조건</summary>
+          <p>1년 이상 근무 시 퇴직금이 발생하며, 주 15시간 이상 근무 시 실업급여 수급 자격이 생길 수 있습니다.</p>
+        </details>
+      </div>
+
+      <div class="faq-section" style="margin-top: 20px;">
+        <h3>❓ 주휴수당 FAQ</h3>
+        <details>
+          <summary>지각이나 조퇴를 해도 주휴수당을 받나요?</summary>
+          <p>네, 결근 없이 출근했다면 발생합니다. 다만 근로시간에 비례하여 금액이 산정됩니다.</p>
+        </details>
+        <details>
+          <summary>수습 기간에도 주휴수당이 적용되나요?</summary>
+          <p>네, 수습 여부와 상관없이 요건(주 15시간 이상 근무 및 개근)을 충족하면 지급 대상입니다.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="ad-box" id="adBox">
+      📢 Google AdSense 자동 광고 최적화 영역
+    </div>
+  </div>
+</body>
+</html>
